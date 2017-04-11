@@ -2,7 +2,7 @@
   "name": "snacker",
   "version": "1.0.0",
   "description": "Create an application to review your favorite snacks.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
