@@ -1,8 +1,9 @@
 <head>
+    <base href="/"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <base href="/"/>
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>all the snacks!</title>
 </head>
 <body>
@@ -10,10 +11,12 @@
     <a href="/">Home</a>
     <a href="/snacks/new">New Snacks</a>
   </header>
-  <h1>Crystal's Snack Reviews</h1>
-  <h2><%= snack.name %></h2>
-  <p><%= snack.review_description %></p>
-  <a href="snacks/<%= snack.id %>/edit">Edit</a>
-  <a href="snacks/<%= snack.id %>/delete">Delete</a>
+  <div class="content">
+    <h1>Crystal's Snack Reviews</h1>
+    <h2><%= snack.name %></h2>
+    <p><%= snack.review_description %></p>
+    <a href="snacks/<%= snack.id %>/edit">Edit</a>
+    <a href="snacks/<%= snack.id %>/delete">Delete</a>
+  </div>
 </body>
 </html>

@@ -1,8 +1,9 @@
 <head>
+    <base href="/"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <base href="/"/>
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>all the snacks!</title>
 </head>
 <body>
@@ -10,21 +11,23 @@
     <a href="/">Home</a>
     <a href="/snacks/new">New Snacks</a>
   </header>
-  <h1>Snack Review Edit Page</h1>
-  <form action="/snacks/<%= snack.id %>?_method=PUT" method="POST">
-    <label>snack name</label>
-    <input name="snack[name]" value="<%= snack.name %>" />
-    <label>snack image</label>
-    <input name="snack[image]" value="<%= snack.img_url %>"/>
-    <label>snack review</label>
-    <input name="snack[review]" value="<%= snack.review_description %>"/>
-    <label>snack rating</label>
-    <input <%= snack.rating==1 ? 'checked' : '' %> type="radio" name="snack[rating]" value="1" /> 1
-    <input <%= snack.rating==2 ? 'checked' : '' %> type="radio" name="snack[rating]" value="2" /> 2
-    <input <%= snack.rating==3 ? 'checked' : '' %> type="radio" name="snack[rating]" value="3" /> 3
-    <input <%= snack.rating==4 ? 'checked' : '' %> type="radio" name="snack[rating]" value="4" /> 4
-    <input <%= snack.rating==5 ? 'checked' : '' %> type="radio" name="snack[rating]" value="5" /> 5
-    <input type="submit" value="Edit Review"/>
-  </form>
+  <div class="content">
+    <h1>Snack Review Edit Page</h1>
+    <form action="/snacks/<%= snack.id %>?_method=PUT" method="POST">
+      <label>snack name</label>
+      <input name="snack[name]" type="text" value="<%= snack.name %>" />
+      <label>snack image</label>
+      <input name="snack[image]" type="text" value="<%= snack.img_url %>"/>
+      <label>snack review</label>
+      <input name="snack[review]" type="text" value="<%= snack.review_description %>"/>
+      <label>snack rating</label>
+      <input <%= snack.rating==1 ? 'checked' : '' %> type="radio" name="snack[rating]" value="1" /> 1
+      <input <%= snack.rating==2 ? 'checked' : '' %> type="radio" name="snack[rating]" value="2" /> 2
+      <input <%= snack.rating==3 ? 'checked' : '' %> type="radio" name="snack[rating]" value="3" /> 3
+      <input <%= snack.rating==4 ? 'checked' : '' %> type="radio" name="snack[rating]" value="4" /> 4
+      <input <%= snack.rating==5 ? 'checked' : '' %> type="radio" name="snack[rating]" value="5" /> 5
+      <input type="submit" value="Edit Review"/>
+    </form>
+  </div>
 </body>
 </html>
