@@ -1,0 +1,21 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <base href="/"/>
+    <title>all the snacks!</title>
+</head>
+<body>
+  <header>
+    <a href="/">Home</a>
+    <a href="snacks/new">New Snacks</a>
+  </header>
+  <h1>Delete Snack Reviews</h1>
+  <h2><%= snack.name %></h2>
+  <p><%= snack.review_description %></p>
+  <form action="/snacks/<%= snack.id %>?_method=DELETE" method="POST">
+    <input type="submit" value="delete this review!"/>
+  </form>
+</body>
+</html>

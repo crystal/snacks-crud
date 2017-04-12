@@ -67,6 +67,16 @@ router.route('/:id')
 			.then(() => {
 				res.redirect('/')
 			})
+	})
+	.delete((req, res) => {
+		knex('snacks')
+			.del()
+			.where({
+				id: req.params.id
+			})
+			.then(() => {
+				res.redirect('/')
+			})
 	});
 
 	router.route('/:id/edit')
@@ -85,6 +95,23 @@ router.route('/:id')
 		      });
 				});
 		});
+
+		router.route('/:id/delete')
+		  .get((req, res) => {
+			  knex('snacks')
+				 	.select('id', 'name', 'img_url', 'review_description', 'rating')
+					.where({
+						id: req.params.id
+					})
+					.first()
+			    .then((snack) => {
+						// render the view engine template w/ users passed in
+			      res.render('snacks/delete', {
+							// the users key & value are the same so this is {users: users}
+			        snack
+			      });
+					});
+			});
 
 
 
