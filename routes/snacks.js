@@ -29,6 +29,7 @@ router.route('/')
 			})
 	});
 
+
 // this is to create a new review
 router.route('/new')
 	.get((req, res) => {
@@ -51,6 +52,40 @@ router.route('/:id')
 	        snack
 	      });
 			});
+	})
+	.put((req, res) => {
+		knex('snacks')
+			.update({
+				name: req.body.snack.name,
+				img_url: req.body.snack.image,
+				review_description: req.body.snack.review,
+				rating: req.body.snack.rating
+			})
+			.where({
+				id: req.params.id
+			})
+			.then(() => {
+				res.redirect('/')
+			})
 	});
+
+	router.route('/:id/edit')
+	  .get((req, res) => {
+		  knex('snacks')
+			 	.select('id', 'name', 'img_url', 'review_description', 'rating')
+				.where({
+					id: req.params.id
+				})
+				.first()
+		    .then((snack) => {
+					// render the view engine template w/ users passed in
+		      res.render('snacks/edit', {
+						// the users key & value are the same so this is {users: users}
+		        snack
+		      });
+				});
+		});
+
+
 
 module.exports = router;

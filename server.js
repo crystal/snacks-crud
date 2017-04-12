@@ -14,6 +14,7 @@ app.set('view engine', 'ejs');
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(bodyparser.json());
 app.use(express.static(__dirname + "/public"));
+app.use(methodOverride('_method'))
 app.use('/snacks', snacksRoute);
 
 app.get('/', (req, res) => {
