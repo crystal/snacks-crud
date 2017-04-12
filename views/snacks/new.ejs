@@ -1,0 +1,29 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>all the snacks!</title>
+</head>
+<body>
+  <header>
+    <a href="/">Home</a>
+    <a href="/snacks/new">New Snacks</a>
+  </header>
+  <h1>Crystal's Snack Reviews</h1>
+  <form action="/snacks" method="POST">
+    <label>snack name</label>
+    <input name="snack[name]" />
+    <label>snack image</label>
+    <input name="snack[image]" />
+    <label>snack review</label>
+    <input name="snack[review]" />
+    <label>snack rating</label>
+    <input type="radio" name="snack[rating]" value="1" /> 1
+    <input type="radio" name="snack[rating]" value="2" /> 2
+    <input type="radio" name="snack[rating]" value="3" /> 3
+    <input type="radio" name="snack[rating]" value="4" /> 4
+    <input type="radio" name="snack[rating]" value="5" /> 5
+    <input type="submit" value="Create New Review"/>
+  </form>
+</body>
+</html>

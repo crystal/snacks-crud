@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>all the snacks!</title>
+</head>
+<body>
+  <header>
+    <a href="/">Home</a>
+    <a href="/snacks/new">New Snacks</a>
+  </header>
+  <h1>Crystal's Snack Reviews</h1>
+  <ul>
+    <% snacks.forEach((snack) => { %>
+      <li>
+        <h2><a href="snacks/<%= snack.id %>"><%= snack.name %></a></h2>
+        <p><%= snack.review_description %></p>
+        <a href="snacks/<%= snack.id %>/edit">Edit</a>
+        <a href="snacks/<%= snack.id %>/delete">Delete</a>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
